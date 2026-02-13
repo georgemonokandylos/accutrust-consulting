@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accutrust Consulting | Strategic Vision & Expert Practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-gold: #c68a1e;
+            --brand-blue: #16335a;
+            --brand-blue-light: #2c5282;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .hero-section {
+            background-color: #f8fafc; /* Fallback color */
+            background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('office-view.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .btn-primary {
+            background-color: var(--brand-blue);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: var(--brand-gold);
+            transform: translateY(-2px);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .service-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #e2e8f0;
+        }
+        .text-brand-blue { color: var(--brand-blue); }
+        .text-brand-gold { color: var(--brand-gold); }
+        .bg-brand-blue { background-color: var(--brand-blue); }
+        
+        .lang-hidden { display: none; }
+
+        /* Logo Fallback Style */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-glass">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="#" class="logo-container">
+                    <!-- Το πραγματικό λογότυπο με βελτιωμένο error handling -->
+                    <img src="logo-2.png" id="main-logo" alt="Accutrust Consulting" class="h-16 w-auto object-contain block" 
+                         onerror="this.style.display='none'; document.getElementById('logo-svg-fallback').style.display='flex';">
+                    
+                    <!-- SVG Fallback (Αρχικά κρυφό μέσω inline style για σιγουριά) -->
+                    <div id="logo-svg-fallback" style="display:none;" class="items-center gap-3">
+                        <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="100" rx="15" fill="#16335a"/>
+                            <path d="M30 70L50 30L70 70" stroke="#c68a1e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M40 55H60" stroke="white" stroke-width="6" stroke-linecap="round"/>
+                        </svg>
+                        <div class="flex flex-col leading-none">
+                            <span class="text-xl font-extrabold tracking-tighter text-brand-blue">ACCUTRUST</span>
+                            <span class="text-[10px] tracking-[0.3em] font-bold text-brand-gold">CONSULTING</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="flex items-center gap-8">
+                <div class="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-wider">
+                    <a href="#about" class="el-text hover:text-brand-gold transition">Προφίλ</a>
+                    <a href="#services" class="el-text hover:text-brand-gold transition">Υπηρεσίες</a>
+                    <a href="#contact" class="el-text hover:text-brand-gold transition">Επικοινωνία</a>
+                    
+                    <a href="#about" class="en-text lang-hidden hover:text-brand-gold transition">About</a>
+                    <a href="#services" class="en-text lang-hidden hover:text-brand-gold transition">Services</a>
+                    <a href="#contact" class="en-text lang-hidden hover:text-brand-gold transition">Contact</a>
+                </div>
+
+                <button onclick="toggleLanguage()" class="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-md text-xs font-bold hover:bg-brand-gold transition">
+                    <span id="lang-label">ENGLISH</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-40 pb-24 md:pt-56 md:pb-40 hero-section px-6">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+            <div class="el-text">
+                <span class="inline-block px-4 py-1 rounded-full bg-white/80 border border-slate-200 text-brand-blue text-xs font-bold tracking-widest uppercase mb-6">Boutique Consulting Firm | Athens</span>
+                <h1 class="text-4xl md:text-7xl font-bold mb-8 text-brand-blue leading-tight">
+                    Στρατηγική Ακρίβεια & <br><span class="text-brand-gold">Αδιαπραγμάτευτη Αξιοπιστία</span>
+                </h1>
+                <p class="text-xl text-slate-800 font-medium max-w-3xl mx-auto mb-12 leading-relaxed">
+                    Αξιοποιούμε τεχνογνωσία δεκαετιών από τον χώρο των Big Four για να προσφέρουμε εξατομικευμένες λύσεις στις πιο σύνθετες επιχειρηματικές σας ανάγκες.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact" class="btn-primary text-white px-10 py-5 rounded-lg font-bold shadow-xl">Ξεκινήστε τη Συνεργασία</a>
+                    <a href="#services" class="bg-white/90 border-2 border-slate-200 text-brand-blue px-10 py-5 rounded-lg font-bold hover:bg-white transition">Οι Υπηρεσίες μας</a>
+                </div>
+            </div>
+
+            <div class="en-text lang-hidden">
+                <span class="inline-block px-4 py-1 rounded-full bg-white/80 border border-slate-200 text-brand-blue text-xs font-bold tracking-widest uppercase mb-6">Boutique Consulting Firm | Athens</span>
+                <h1 class="text-4xl md:text-7xl font-bold mb-8 text-brand-blue leading-tight">
+                    Strategic Precision & <br><span class="text-brand-gold">Uncompromising Trust</span>
+                </h1>
+                <p class="text-xl text-slate-800 font-medium max-w-3xl mx-auto mb-12 leading-relaxed">
+                    Leveraging decades of Big Four expertise to provide tailored solutions for your most complex business needs.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact" class="btn-primary text-white px-10 py-5 rounded-lg font-bold shadow-xl">Get Started</a>
+                    <a href="#services" class="bg-white/90 border-2 border-slate-200 text-brand-blue px-10 py-5 rounded-lg font-bold hover:bg-white transition">View Services</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <section class="py-12 bg-brand-blue text-white px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div>
+                <div class="text-3xl font-bold text-brand-gold mb-1">Big Four</div>
+                <div class="text-sm opacity-80 uppercase tracking-widest el-text">Πρότυπα Ποιότητας</div>
+                <div class="text-sm opacity-80 uppercase tracking-widest en-text lang-hidden">Quality Standards</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-brand-gold mb-1">40+</div>
+                <div class="text-sm opacity-80 uppercase tracking-widest el-text">Έτη Εμπειρίας</div>
+                <div class="text-sm opacity-80 uppercase tracking-widest en-text lang-hidden">Years of Experience</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-brand-gold mb-1">Boutique</div>
+                <div class="text-sm opacity-80 uppercase tracking-widest el-text">Προσωπική Δέσμευση</div>
+                <div class="text-sm opacity-80 uppercase tracking-widest en-text lang-hidden">Personal Commitment</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Team & Founder Photo -->
+    <section id="about" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div class="relative order-2 md:order-1">
+                <img src="team.jpg" alt="Η ομάδα της Accutrust με τον ιδρυτή" class="rounded-2xl shadow-2xl relative z-10 w-full h-[550px] object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop'">
+                <div class="absolute -bottom-6 -left-6 w-full h-full border-4 border-brand-gold rounded-2xl z-0"></div>
+                <!-- Λεζάντα για τον ιδρυτή -->
+                <div class="absolute bottom-4 right-4 z-20 bg-brand-blue/90 text-white px-4 py-2 rounded-lg backdrop-blur-sm text-sm border-l-4 border-brand-gold">
+                    <span class="el-text font-semibold">Η ομάδα μας και ο ιδρυτής μας</span>
+                    <span class="en-text lang-hidden font-semibold">Our team and our founder</span>
+                </div>
+            </div>
+            
+            <div class="el-text order-1 md:order-2">
+                <h2 class="text-brand-blue text-4xl font-bold mb-8">Η Φιλοσοφία μας</h2>
+                <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
+                    <p>
+                        Στην <span class="font-bold text-brand-blue">Accutrust Consulting</span>, η φιλοσοφία μας πηγάζει από την πεποίθηση ότι η επιτυχία χτίζεται πάνω σε προσωπικές σχέσεις εμπιστοσύνης.
+                    </p>
+                    <p>
+                        Υπό την καθοδήγηση του ιδρυτή μας και με μια ομάδα έμπειρων στελεχών από τον χώρο των πολυεθνικών ομίλων, προσφέρουμε ένα μοντέλο συνεργασίας που συνδυάζει την υψηλή τεχνογνωσία με την άμεση και προσωπική επαφή.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-brand-gold font-bold text-xl">✓</span>
+                            <span>Προσωπική επίβλεψη κάθε έργου από τον ιδρυτή και τους εταίρους</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-brand-gold font-bold text-xl">✓</span>
+                            <span>Ανθρωποκεντρική προσέγγιση σε σύνθετα φορολογικά ζητήματα</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-brand-gold font-bold text-xl">✓</span>
+                            <span>Δέσμευση στην ηθική και τη διαφάνεια</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="en-text lang-hidden order-1 md:order-2">
+                <h2 class="text-brand-blue text-4xl font-bold mb-8">Our Philosophy</h2>
+                <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
+                    <p>
+                        At <span class="font-bold text-brand-blue">Accutrust Consulting</span>, our philosophy stems from the belief that success is built on personal relationships of trust.
+                    </p>
+                    <p>
+                        Under the guidance of our founder and a team of seasoned professionals from multinational backgrounds, we offer a collaborative model that combines high expertise with direct personal contact.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-brand-gold font-bold text-xl">✓</span>
+                            <span>Personal oversight of every project by the founder and partners</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-brand-gold font-bold text-xl">✓</span>
+                            <span>Human-centric approach to complex tax issues</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-brand-gold font-bold text-xl">✓</span>
+                            <span>Commitment to ethics and transparency</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-slate-50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <div class="el-text">
+                    <h2 class="text-brand-blue text-4xl font-bold mb-4">Εξειδικευμένες Υπηρεσίες</h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto">Στρατηγική καθοδήγηση και συμμόρφωση για την ελληνική και διεθνή αγορά.</p>
+                </div>
+                <div class="en-text lang-hidden">
+                    <h2 class="text-brand-blue text-4xl font-bold mb-4">Expert Services</h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto">Strategic guidance and compliance for domestic and international markets.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-xl shadow-sm border border-slate-100">
+                    <img src="compass-taxation.jpg" alt="Διεθνής Φορολογία" class="service-image" onerror="this.src='https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop'">
+                    <div class="p-8">
+                        <h3 class="font-bold text-xl mb-4 text-brand-blue flex items-center gap-3">
+                            <span class="el-text">Διεθνής Φορολογία</span>
+                            <span class="en-text lang-hidden">International Taxation</span>
+                        </h3>
+                        <p class="text-slate-500 el-text leading-relaxed">Στρατηγικός σχεδιασμός και συμμόρφωση σε ένα διασυνοριακό περιβάλλον. Βοηθούμε τις επιχειρήσεις να πλοηγηθούν με ασφάλεια στο διεθνές φορολογικό τοπίο.</p>
+                        <p class="text-slate-500 en-text lang-hidden leading-relaxed">Strategic planning and compliance in a cross-border environment. Helping businesses navigate safely through the international tax landscape.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-xl shadow-sm border border-slate-100">
+                    <img src="oecd.jpg" alt="Transfer Pricing" class="service-image" onerror="this.src='https://images.unsplash.com/photo-1554224155-169641357599?q=80&w=2070&auto=format&fit=crop'">
+                    <div class="p-8">
+                        <h3 class="font-bold text-xl mb-4 text-brand-blue flex items-center gap-3">
+                            <span class="el-text">Transfer Pricing</span>
+                            <span class="en-text lang-hidden">Transfer Pricing</span>
+                        </h3>
+                        <p class="text-slate-500 el-text leading-relaxed">Πλήρης υποστήριξη και τεκμηρίωση ενδοομιλικών τιμολογήσεων σύμφωνα με τις κατευθυντήριες γραμμές του ΟΟΣΑ.</p>
+                        <p class="text-slate-500 en-text lang-hidden leading-relaxed">Full support and documentation for intercompany transactions following OECD guidelines and ensuring compliance.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+                    <h3 class="font-bold text-xl mb-4 text-brand-blue flex items-center gap-3">
+                        <span class="w-2 h-8 bg-brand-gold rounded-full"></span>
+                        <span class="el-text">Συμβουλευτικές Υπηρεσίες</span>
+                        <span class="en-text lang-hidden">Consulting Services</span>
+                    </h3>
+                    <p class="text-slate-500 el-text leading-relaxed">Στρατηγική καθοδήγηση για τη βελτιστοποίηση των εταιρικών διαδικασιών, εξαγορές και συγχωνεύσεις (M&A) και χρηματοοικονομικό σχεδιασμό.</p>
+                    <p class="text-slate-500 en-text lang-hidden leading-relaxed">Strategic guidance for process optimization, M&A support, and comprehensive financial planning.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+                    <h3 class="font-bold text-xl mb-4 text-brand-blue flex items-center gap-3">
+                        <span class="w-2 h-8 bg-brand-gold rounded-full"></span>
+                        <span class="el-text">Λογιστική Υποστήριξη</span>
+                        <span class="en-text lang-hidden">Accounting Support</span>
+                    </h3>
+                    <p class="text-slate-500 el-text leading-relaxed">Ολοκληρωμένη διαχείριση με απόλυτη έμφαση στη διαφάνεια, την ακρίβεια των στοιχείων και τη χρηματοοικονομική πληροφόρηση υψηλού επιπέδου.</p>
+                    <p class="text-slate-500 en-text lang-hidden leading-relaxed">Comprehensive management with absolute focus on transparency, data accuracy, and high-level financial reporting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-start">
+            <div class="md:w-1/3">
+                <div class="el-text">
+                    <h2 class="text-brand-blue text-4xl font-bold mb-6">Επικοινωνία</h2>
+                    <p class="text-slate-500 mb-8">Είμαστε ο έμπιστος συνεργάτης για ξένους επενδυτές στην Ελλάδα και ελληνικές εταιρείες με διεθνή παρουσία.</p>
+                </div>
+                <div class="en-text lang-hidden">
+                    <h2 class="text-brand-blue text-4xl font-bold mb-6">Contact Us</h2>
+                    <p class="text-slate-500 mb-8">The trusted partner for foreign investors in Greece and Greek companies with a global presence.</p>
+                </div>
+                <div class="space-y-4 font-medium">
+                    <div class="flex items-center gap-4 text-slate-700">
+                        <span class="text-brand-gold">📍</span> Αθήνα, Ελλάδα
+                    </div>
+                    <div class="flex items-center gap-4 text-slate-700">
+                        <span class="text-brand-gold">✉️</span> contact@accutrust.gr
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:w-2/3 w-full bg-slate-50 p-8 md:p-12 rounded-2xl border border-slate-100 shadow-sm">
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="event.preventDefault();">
+                    <div class="md:col-span-1">
+                        <label class="block text-sm font-bold text-brand-blue mb-2 el-text">Όνομα</label>
+                        <label class="block text-sm font-bold text-brand-blue mb-2 en-text lang-hidden">Name</label>
+                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none bg-white">
+                    </div>
+                    <div class="md:col-span-1">
+                        <label class="block text-sm font-bold text-brand-blue mb-2 el-text">Email</label>
+                        <label class="block text-sm font-bold text-brand-blue mb-2 en-text lang-hidden">Email</label>
+                        <input type="email" class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none bg-white">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-bold text-brand-blue mb-2 el-text">Μήνυμα</label>
+                        <label class="block text-sm font-bold text-brand-blue mb-2 en-text lang-hidden">Message</label>
+                        <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-200 outline-none bg-white"></textarea>
+                    </div>
+                    <div class="md:col-span-2">
+                        <button type="submit" class="btn-primary w-full text-white font-bold py-4 rounded-lg shadow-lg uppercase tracking-widest el-text">Αποστολή</button>
+                        <button type="submit" class="btn-primary w-full text-white font-bold py-4 rounded-lg shadow-lg uppercase tracking-widest en-text lang-hidden">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue py-16 px-6 text-white/80">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start">
+                <img src="logo-2.png" alt="Accutrust" class="h-12 mb-4 brightness-0 invert block" 
+                     onerror="this.style.display='none'; document.getElementById('footer-logo-text').style.display='block';">
+                <div id="footer-logo-text" style="display:none;" class="text-xl font-bold text-white mb-2">ACCUTRUST</div>
+                
+                <div class="text-xs tracking-widest uppercase text-brand-gold font-bold">
+                    Strategic Vision | Expert Practice
+                </div>
+            </div>
+            
+            <div class="text-xs">
+                &copy; 2024 Accutrust Consulting. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'EL';
+        function toggleLanguage() {
+            const elElements = document.querySelectorAll('.el-text');
+            const enElements = document.querySelectorAll('.en-text');
+            const langLabel = document.getElementById('lang-label');
+            if (currentLang === 'EL') {
+                elElements.forEach(el => el.classList.add('lang-hidden'));
+                enElements.forEach(el => el.classList.remove('lang-hidden'));
+                langLabel.innerText = 'ΕΛΛΗΝΙΚΑ';
+                currentLang = 'EN';
+                document.documentElement.lang = 'en';
+            } else {
+                enElements.forEach(el => el.classList.add('lang-hidden'));
+                elElements.forEach(el => el.classList.remove('lang-hidden'));
+                langLabel.innerText = 'ENGLISH';
+                currentLang = 'EL';
+                document.documentElement.lang = 'el';
+            }
+        }
+    </script>
+</body>
+</html>
