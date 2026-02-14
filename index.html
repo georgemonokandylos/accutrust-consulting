@@ -23,7 +23,8 @@
         }
         .hero-section {
             background-color: #f8fafc;
-            background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('office view.jpg');
+            /* Χρήση %20 για το κενό στο όνομα αρχείου office view.png */
+            background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('office%20view.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -65,7 +66,7 @@
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
             <div class="flex items-center">
                 <a href="#">
-                    <img src="logo-2.png" alt="Accutrust Consulting Logo" class="logo-img">
+                    <img src="logo-2.png" alt="Accutrust Consulting Logo" class="logo-img" onerror="this.parentElement.innerHTML='<span class=\'font-bold text-xl text-brand-blue\'>ACCUTRUST</span>';">
                 </a>
             </div>
             
@@ -144,14 +145,14 @@
             <div class="grid md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-5">
                     <div class="relative">
-                        <img src="team.jpg" alt="Μιχάλης Κατακαλέας" class="rounded-2xl shadow-2xl w-full object-cover aspect-[3/4]">
+                        <img src="team.png" alt="Team" class="rounded-2xl shadow-2xl w-full object-cover aspect-[3/4]" onerror="this.src='https://via.placeholder.com/400x533?text=Leadership+Team';">
                         <div class="absolute -bottom-4 -right-4 bg-brand-gold w-24 h-24 -z-10 rounded-2xl"></div>
                     </div>
                 </div>
                 <div class="md:col-span-7">
                     <div class="el-text">
                         <span class="text-brand-gold font-bold tracking-widest text-sm uppercase mb-2 block">Ιδρυτής & Διευθύνων Σύμβουλος</span>
-                        <h2 class="text-brand-blue text-4xl font-bold mb-6 text-brand-blue">Μιχάλης Κατακαλέας</h2>
+                        <h2 class="text-brand-blue text-4xl font-bold mb-6">Μιχάλης Κατακαλέας</h2>
                         <div class="space-y-4 text-slate-600 text-lg leading-relaxed">
                             <p>
                                 Με μια εντυπωσιακή πορεία άνω των 30 ετών στον χώρο των φορολογικών και συμβουλευτικών υπηρεσιών, ο Μιχάλης Κατακαλέας ίδρυσε την Accutrust Consulting για να προσφέρει υψηλού επιπέδου στρατηγική καθοδήγηση.
@@ -170,7 +171,7 @@
 
                     <div class="en-text lang-hidden">
                         <span class="text-brand-gold font-bold tracking-widest text-sm uppercase mb-2 block">Founder & CEO</span>
-                        <h2 class="text-brand-blue text-4xl font-bold mb-6 text-brand-blue">Michalis Katakaleas</h2>
+                        <h2 class="text-brand-blue text-4xl font-bold mb-6">Michalis Katakaleas</h2>
                         <div class="space-y-4 text-slate-600 text-lg leading-relaxed">
                             <p>
                                 With an impressive career spanning over 30 years in tax and advisory services, Michalis Katakaleas founded Accutrust Consulting to provide high-level strategic guidance.
@@ -206,9 +207,9 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-12">
-                <!-- Service 1 -->
+                <!-- Service 1: International Tax -->
                 <div class="service-card bg-slate-50 rounded-xl shadow-sm border border-slate-100">
-                    <img src="compass-taxation.jpg" alt="Διεθνής Φορολογία" class="service-image">
+                    <img src="compass-taxation.png" alt="Διεθνής Φορολογία" class="service-image" onerror="this.src='https://via.placeholder.com/600x400?text=International+Taxation';">
                     <div class="p-8">
                         <h3 class="font-bold text-xl mb-4 text-brand-blue">
                             <span class="el-text">Διεθνής Φορολογία</span>
@@ -219,9 +220,9 @@
                     </div>
                 </div>
 
-                <!-- Service 2 -->
+                <!-- Service 2: Transfer Pricing -->
                 <div class="service-card bg-slate-50 rounded-xl shadow-sm border border-slate-100">
-                    <img src="oecd.jpg" alt="Transfer Pricing" class="service-image">
+                    <img src="oecd.png" alt="Transfer Pricing" class="service-image" onerror="this.src='https://via.placeholder.com/600x400?text=Transfer+Pricing';">
                     <div class="p-8">
                         <h3 class="font-bold text-xl mb-4 text-brand-blue">
                             <span class="el-text">Transfer Pricing</span>
@@ -287,7 +288,7 @@
     <footer class="bg-brand-blue py-16 px-6 text-white/80">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
             <div>
-                <img src="logo-2.png" alt="Accutrust" class="h-16 mb-4 brightness-0 invert mx-auto md:mx-0">
+                <img src="logo-2.png" alt="Accutrust" class="h-16 mb-4 brightness-0 invert mx-auto md:mx-0" onerror="this.style.display='none';">
                 <div class="text-xs tracking-widest uppercase text-brand-gold font-bold">
                     Strategic Vision | Expert Practice
                 </div>
